@@ -1,0 +1,168 @@
+package api.inmet.newton.models;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@Entity
+@Table
+public class AutomaticStationsFullEntity {
+
+	@Id
+	private String CodEstacao;
+	@Column(name="DT_MEDICAO")
+	private Date data;
+	private String horaUtc;
+	private float precipTotalHora;
+	private float pressaoAtmosfericaNvlEstacao;
+	private float pressaoAtmosfericaMaxHora;
+	private float pressaoAtmosfericaMinHora;
+	private float radiacaoGlobal;
+	private float tempDoAr;
+	private float tempPontoOrvalho;
+	private float tempMaxHora;
+	private float tempMinHora;
+	private float tempOrvalhoMaxHora;
+	private float tempOrvalhoMinHora;
+	private float umidRelMaxHora;
+	private float umidRelMinHora;
+	private float umidRelArHora;
+	private float ventoDirecaoHora;
+	private float ventoRajadaMax;
+	@Column(name="VEN_VEL")
+	private float ventoVelocHora;
+	
+	
+	public String getCodEstacao() {
+		return CodEstacao;
+	}
+	public void setCodEstacao(String codEstacao) {
+		CodEstacao = codEstacao;
+	}
+	public Date getData() {
+		return data;
+	}
+	public void setData(Date data) {
+		this.data = data;
+	}
+	public String getHoraUtc() {
+		return horaUtc;
+	}
+	public void setHoraUtc(String horaUtc) {
+		this.horaUtc = horaUtc;
+	}
+	public float getPrecipTotalHora() {
+		return precipTotalHora;
+	}
+	public void setPrecipTotalHora(float precipTotalHora) {
+		this.precipTotalHora = precipTotalHora;
+	}
+	public float getPressaoAtmosfericaNvlEstacao() {
+		return pressaoAtmosfericaNvlEstacao;
+	}
+	public void setPressaoAtmosfericaNvlEstacao(float pressaoAtmosfericaNvlEstacao) {
+		this.pressaoAtmosfericaNvlEstacao = pressaoAtmosfericaNvlEstacao;
+	}
+	public float getPressaoAtmosfericaMaxHora() {
+		return pressaoAtmosfericaMaxHora;
+	}
+	public void setPressaoAtmosfericaMaxHora(float pressaoAtmosfericaMaxHora) {
+		this.pressaoAtmosfericaMaxHora = pressaoAtmosfericaMaxHora;
+	}
+	public float getPressaoAtmosfericaMinHora() {
+		return pressaoAtmosfericaMinHora;
+	}
+	public void setPressaoAtmosfericaMinHora(float pressaoAtmosfericaMinHora) {
+		this.pressaoAtmosfericaMinHora = pressaoAtmosfericaMinHora;
+	}
+	public float getRadiacaoGlobal() {
+		return radiacaoGlobal;
+	}
+	public void setRadiacaoGlobal(float radiacaoGlobal) {
+		this.radiacaoGlobal = radiacaoGlobal;
+	}
+	public float getTempDoAr() {
+		return tempDoAr;
+	}
+	public void setTempDoAr(float tempDoAr) {
+		this.tempDoAr = tempDoAr;
+	}
+	public float getTempPontoOrvalho() {
+		return tempPontoOrvalho;
+	}
+	public void setTempPontoOrvalho(float tempPontoOrvalho) {
+		this.tempPontoOrvalho = tempPontoOrvalho;
+	}
+	public float getTempMaxHora() {
+		return tempMaxHora;
+	}
+	public void setTempMaxHora(float tempMaxHora) {
+		this.tempMaxHora = tempMaxHora;
+	}
+	public float getTempMinHora() {
+		return tempMinHora;
+	}
+	public void setTempMinHora(float tempMinHora) {
+		this.tempMinHora = tempMinHora;
+	}
+	public float getTempOrvalhoMaxHora() {
+		return tempOrvalhoMaxHora;
+	}
+	public void setTempOrvalhoMaxHora(float tempOrvalhoMaxHora) {
+		this.tempOrvalhoMaxHora = tempOrvalhoMaxHora;
+	}
+	public float getTempOrvalhoMinHora() {
+		return tempOrvalhoMinHora;
+	}
+	public void setTempOrvalhoMinHora(float tempOrvalhoMinHora) {
+		this.tempOrvalhoMinHora = tempOrvalhoMinHora;
+	}
+	public float getUmidRelMaxHora() {
+		return umidRelMaxHora;
+	}
+	public void setUmidRelMaxHora(float umidRelMaxHora) {
+		this.umidRelMaxHora = umidRelMaxHora;
+	}
+	public float getUmidRelMinHora() {
+		return umidRelMinHora;
+	}
+	public void setUmidRelMinHora(float umidRelMinHora) {
+		this.umidRelMinHora = umidRelMinHora;
+	}
+	public float getUmidRelArHora() {
+		return umidRelArHora;
+	}
+	public void setUmidRelArHora(float umidRelArHora) {
+		this.umidRelArHora = umidRelArHora;
+	}
+	public float getVentoDirecaoHora() {
+		return ventoDirecaoHora;
+	}
+	public void setVentoDirecaoHora(float ventoDirecaoHora) {
+		this.ventoDirecaoHora = ventoDirecaoHora;
+	}
+	public float getVentoRajadaMax() {
+		return ventoRajadaMax;
+	}
+	public void setVentoRajadaMax(float ventoRajadaMax) {
+		this.ventoRajadaMax = ventoRajadaMax;
+	}
+	public float getVentoVelocHora() {
+		return ventoVelocHora;
+	}
+	public void setVentoVelocHora(float ventoVelocHora) {
+		this.ventoVelocHora = ventoVelocHora;
+	}
+	
+	
+}

@@ -1,0 +1,5 @@
+package api.inmet.newton.repository;
+
+public interface AutomaticStationsFullRepository {
+
+}

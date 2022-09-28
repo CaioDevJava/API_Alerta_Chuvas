@@ -1,0 +1,47 @@
+package api.inmet.newton.mapper;
+
+import api.inmet.newton.dto.AutomaticStationsFullDto;
+import api.inmet.newton.models.AutomaticStationsFullEntity;
+
+public class AutomaticStationsFullMapper {
+	
+	AutomaticStationsFullDto station = null;
+	
+	private AutomaticStationsFullMapper() {
+		throw new IllegalStateException("Mapper Class");
+	}
+	
+	public AutomaticStationsFullDto automaticStationsFullDtoToAutomaticFullMapper(AutomaticStationsFullEntity entity) {
+		
+		station = new AutomaticStationsFullDto();
+		
+		if(entity != null) {
+			
+			station.setCodEstacao(entity.getCodEstacao());
+			station.setData(entity.getData());
+			station.setHoraUtc(entity.getHoraUtc());
+			station.setPrecipTotalHora(entity.getPrecipTotalHora());
+			station.setPressaoAtmosfericaNvlEstacao(entity.getPressaoAtmosfericaNvlEstacao());
+			station.setPressaoAtmosfericaMaxHora(entity.getPressaoAtmosfericaMaxHora());
+			station.setPressaoAtmosfericaMinHora(entity.getPressaoAtmosfericaMinHora());
+			station.setRadiacaoGlobal(entity.getRadiacaoGlobal());
+			station.setTempDoAr(entity.getTempDoAr());
+			station.setTempPontoOrvalho(entity.getTempPontoOrvalho());
+			station.setTempMaxHora(entity.getTempMaxHora());
+			station.setTempMinHora(entity.getTempMinHora());
+			station.setTempOrvalhoMaxHora(entity.getTempOrvalhoMaxHora());
+			station.setTempOrvalhoMaxHora(entity.getTempOrvalhoMaxHora());
+			station.setUmidRelMaxHora(entity.getUmidRelMaxHora());
+			station.setUmidRelMinHora(entity.getUmidRelMinHora());
+			station.setUmidRelArHora(entity.getUmidRelArHora());
+			station.setVentoDirecaoHora(entity.getVentoDirecaoHora());
+			station.setVentoRajadaMax(entity.getVentoRajadaMax());
+			station.setVentoVelocHora(entity.getVentoVelocHora());
+			
+			
+		}
+		
+		return station;
+	}
+
+}

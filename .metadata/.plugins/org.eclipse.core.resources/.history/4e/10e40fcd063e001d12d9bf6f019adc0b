@@ -1,0 +1,5 @@
+package api.inmet.newton.service;
+
+public class AutomaticStationsService {
+
+}
