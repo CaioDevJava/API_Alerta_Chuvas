@@ -14,7 +14,7 @@ import api.inmet.newton.repository.AutomaticStationRepository;
 @Service
 public class AutomaticStationsService {
 	
-	@Autowired
+	/*@Autowired
 	AutomaticStationRepository asr;
 	
 	AutomaticStationsDto station;
@@ -32,6 +32,6 @@ public class AutomaticStationsService {
 		return station;
 		
 	}
-	
+	*/
 	
 }

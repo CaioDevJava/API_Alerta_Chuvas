@@ -22,7 +22,7 @@ public class AutomaticStationsFullMapper {
 			
 			station = new AutomaticStationsFullDto();
 			
-			station.setVentoDirHora(entity.getVentoDirHora());
+			/*station.setVentoDirHora(entity.getVentoDirHora());
 			station.setDataMedicao(entity.getDataMedicao());
 			station.setCidadeEstacao(entity.getCidadeEstacao());
 			station.setChuva(entity.getChuva());
@@ -45,7 +45,7 @@ public class AutomaticStationsFullMapper {
 			station.setLongitude(entity.getLongitude());
 			station.setHoraMedicao(entity.getHoraMedicao());
 			station.setUmidRelArMinDia(entity.getUmidRelArMinDia());
-			station.setTempOrvalhoMaxHora(entity.getTempOrvalhoMaxHora());
+			station.setTempOrvalhoMaxHora(entity.getTempOrvalhoMaxHora());*/
 		}
 		
 		
@@ -53,10 +53,10 @@ public class AutomaticStationsFullMapper {
 	}
 	
 	public static AutomaticStationsFullEntity ToAutomaticStationFullEntity(AutomaticStationsFullDto station) {
+		
 		AutomaticStationsFullEntity entity = null;
 		
-		if(station != null) {
-			
+		if(station != null) {	
 			entity = new AutomaticStationsFullEntity();
 			
 			entity.setVentoDirHora(station.getVentoDirHora());
@@ -66,9 +66,8 @@ public class AutomaticStationsFullMapper {
 			entity.setPresAtmNvlEstacaoHora(station.getPresAtmNvlEstacaoHora());
 			entity.setLatitude(station.getLatitude());
 			entity.setPresAtmMinHora(station.getPresAtmMinHora());
-			entity.setPresAtmMinHora(station.getPresAtmMinHora());
 			entity.setUmidRelMaxHora(station.getUmidRelMaxHora());
-			entity.setPresAtmMaxHora(station.getPresAtmMaxHora());
+			entity.setPresAtmMaxHora((station.getPresAtmMaxHora()));
 			entity.setVelocVentoHora(station.getVelocVentoHora());
 			entity.setUf(station.getUf());
 			entity.setTempOrvalhoMinHora(station.getTempOrvalhoMinHora());
@@ -83,8 +82,7 @@ public class AutomaticStationsFullMapper {
 			entity.setLongitude(station.getLongitude());
 			entity.setHoraMedicao(station.getHoraMedicao());
 			entity.setUmidRelArMinDia(station.getUmidRelArMinDia());
-			entity.setTempOrvalhoMaxHora(station.getTempOrvalhoMaxHora());
-			
+			entity.setTempOrvalhoMaxHora(station.getTempOrvalhoMaxHora());	
 		}
 		
 		return entity;

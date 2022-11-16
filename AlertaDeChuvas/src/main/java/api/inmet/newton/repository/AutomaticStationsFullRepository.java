@@ -8,8 +8,8 @@ import org.springframework.stereotype.Repository;
 import api.inmet.newton.dto.AutomaticStationsFullDto;
 
 @Repository
-public interface AutomaticStationsFullRepository extends JpaRepository<AutomaticStationsFullDto, String> {
+public interface AutomaticStationsFullRepository {
 	
-	List<AutomaticStationsFullDto> queryByCodEstacao(String codEstacao);
+	List<AutomaticStationsFullDto> findByCodEstacao(String codEstacao);
 
 }

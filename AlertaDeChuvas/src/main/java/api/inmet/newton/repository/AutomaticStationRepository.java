@@ -10,7 +10,7 @@ import api.inmet.newton.dto.AutomaticStationsDto;
 //import api.inmet.newton.models.AutomaticStationEntity;
 
 @Repository
-public interface AutomaticStationRepository extends JpaRepository<AutomaticStationsDto, String> {
+public interface AutomaticStationRepository  {
 
 	//List<AutomaticStationDto> queryByDate (Date data);
 }

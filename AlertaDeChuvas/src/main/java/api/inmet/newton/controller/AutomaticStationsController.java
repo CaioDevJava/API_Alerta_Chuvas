@@ -1,7 +1,7 @@
 package api.inmet.newton.controller;
 
-import java.text.DateFormat;
-import java.util.Date;
+
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,13 +18,13 @@ import lombok.AllArgsConstructor;
 @RestController
 public class AutomaticStationsController {
 	
-	@Autowired
+	/*@Autowired
 	AutomaticStationsService ass;
 
 	
-	@GetMapping("/{data}")
-	public List<AutomaticStationsDto> recuperarDados(Date data){
+	@GetMapping("https://apitempo.inmet.gov.br/estacao/2022-09-29")
+	public List<AutomaticStationsDto> recuperarDados(){
 		return ass.recuperarTodos();
-	}
+	}*/
 
 }
