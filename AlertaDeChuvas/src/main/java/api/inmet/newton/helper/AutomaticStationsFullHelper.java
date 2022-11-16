@@ -23,10 +23,7 @@ public class AutomaticStationsFullHelper {
 				AutomaticStationsFullEntity entityTemp = AutomaticStationsFullMapper.ToAutomaticStationFullEntity(stationDto[i]);
 				entity.add(entityTemp);
 			}
-			
-			for(int o = 0; o < entity.size();o++) {
-				System.out.println(entity.get(o));
-			}
+
 		}
 		
 		return entity;

@@ -12,7 +12,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name="ALERTA_CHUVAS")
+@Table(name="DADOS_API")
 public class AutomaticStationsFullEntity {
 	
 // Codigo da Estação (PK)

@@ -14,26 +14,25 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
-import com.google.gson.FieldNamingPolicy;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import api.inmet.newton.dto.AutomaticStationsFullDto;
 import api.inmet.newton.helper.AutomaticStationsFullHelper;
 import api.inmet.newton.mapper.AutomaticStationsFullMapper;
 import api.inmet.newton.models.AutomaticStationsFullEntity;
+import api.inmet.newton.repository.AutomaticStationsFullRepository;
 import api.inmet.newton.util.JsonUtil;
 @Service
 public class AutomaticStationsFullService  {
 	
-	//tomaticStationsFullRepository asfr;
+	@Autowired
+	AutomaticStationsFullRepository asfr;
 	
 	
-	public ResponseEntity recuperarApi () throws Exception {
+	public List<AutomaticStationsFullEntity> recuperarDadosApi () throws Exception {
 		
 		
 		SimpleDateFormat dataFormater = new SimpleDateFormat("yyyy-MM-dd");
@@ -54,7 +53,7 @@ public class AutomaticStationsFullService  {
 				.connectTimeout(Duration.ofSeconds(5))
 				.build();
 
-		// Captura a response
+		// Captura a response vinda da API
 		HttpResponse<String> response = httpClient.send(request, BodyHandlers.ofString());
 		
 		// Converte a Response em String
@@ -65,18 +64,18 @@ public class AutomaticStationsFullService  {
 
 		List<AutomaticStationsFullEntity>  entityStation = new ArrayList<>();
 			
-		//Testa pra ver se o DTO foi prenchido com os dados da API
+		//Testa para ver se o DTO foi prenchido com os dados da API
 			if(!dto.equals(null)) {
 			
 				//Converte o DTO em Entity
 				entityStation= AutomaticStationsFullHelper.preencherEntity(dto);
 
 				//Retorna o status e a lista de entity preenchida
-				return ResponseEntity.status(HttpStatus.OK).body(entityStation);
+				return entityStation;
 			}
 			
 			// Em caso de sucesso retorna erro 400 e uma mensagem de onde foi o erro
-		return ResponseEntity.badRequest().body("Erro ao converter em entity");
+		return null;
 	}
 	
 		
@@ -86,36 +85,21 @@ public class AutomaticStationsFullService  {
 		return null;
 	}
 	
-	@Transactional
-	public ResponseEntity<String> salvarEntity(AutomaticStationsFullDto dto) {
-		
+
+
+	//Persistir os dados da API no banco
+	public HttpStatus salvarDados(List<AutomaticStationsFullEntity> entityStation) {
 		List<AutomaticStationsFullEntity> entityList = new ArrayList<>();
-		AutomaticStationsFullEntity entity = new AutomaticStationsFullEntity();
 		
-		if(dto != null) {
+		if(entityStation != null) {
 		
-		entity = AutomaticStationsFullMapper.ToAutomaticStationFullEntity(dto);
-		//asfr.save(entity);
-		
-		System.out.println(entity.toString());
+			for(int i = 0; i < entityStation.size(); i++) {
+				asfr.save(entityStation.get(i));
+			}
+			
+			return HttpStatus.OK;
 		}
-		return ResponseEntity.status(HttpStatus.OK).body("Salvo com sucesso!");
-	}
-	
-	@Transactional
-	public ResponseEntity<String> salvarDto(AutomaticStationsFullEntity entity) {
-		
-		
-		AutomaticStationsFullDto dto = new AutomaticStationsFullDto();
-		
-		if(entity != null) {
-		
-		entity = AutomaticStationsFullMapper.ToAutomaticStationFullEntity(dto);
-		//asfr.save(dto);
-		
-		System.out.println(entity.toString());
-		}
-		return ResponseEntity.status(HttpStatus.OK).body("Salvo com sucesso!");
+		return HttpStatus.INTERNAL_SERVER_ERROR;
 	}
 
 }

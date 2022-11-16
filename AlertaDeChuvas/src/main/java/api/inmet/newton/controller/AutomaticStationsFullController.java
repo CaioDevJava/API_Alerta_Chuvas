@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import api.inmet.newton.dto.AutomaticStationsFullDto;
+import api.inmet.newton.models.AutomaticStationsFullEntity;
 import api.inmet.newton.service.AutomaticStationsFullService;
 
 @RestController
@@ -21,11 +22,13 @@ public class AutomaticStationsFullController {
 	private AutomaticStationsFullService service;
 	
 	@GetMapping("/v1/automaticStationsFull")
-	public ResponseEntity recuperar() throws Exception {
+	public ResponseEntity<List<AutomaticStationsFullEntity>> recuperar() throws Exception {
 			
-		 service.recuperarApi();
-
-		return ResponseEntity.ok().body(null);
+		 List<AutomaticStationsFullEntity> entityStation = service.recuperarDadosApi();
+		 
+		 service.salvarDados(entityStation);
+		 
+		return ResponseEntity.ok().body(entityStation);
 	}
 	
 	@PostMapping
