@@ -10,6 +10,7 @@ import lombok.Setter;
 @Setter
 public class AutomaticStationsFullDto {
  
+	
 	@JsonProperty("CD_ESTACAO")
     private String codEstacao;
     @JsonProperty("VEN_DIR")

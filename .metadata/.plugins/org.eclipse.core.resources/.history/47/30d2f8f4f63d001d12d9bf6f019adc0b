@@ -1,5 +1,0 @@
-package api.inmet.newton.dto;
-
-public class AutomaticStationsDto {
-
-}

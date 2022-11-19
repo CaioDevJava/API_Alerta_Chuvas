@@ -19,16 +19,24 @@ public class AutomaticStationsFullController {
 	
 	
 	@Autowired
-	private AutomaticStationsFullService service;
+	private AutomaticStationsFullService stationService;
 	
 	@GetMapping("/v1/automaticStationsFull")
-	public ResponseEntity<List<AutomaticStationsFullEntity>> recuperar() throws Exception {
+	public List<AutomaticStationsFullEntity> recuperar() throws Exception {
 			
-		 List<AutomaticStationsFullEntity> entityStation = service.recuperarDadosApi();
+		 List<AutomaticStationsFullEntity> entityStation = stationService.recuperarDadosApi();
 		 
-		 service.salvarDados(entityStation);
+		 stationService.salvarDados(entityStation);
 		 
-		return ResponseEntity.ok().body(entityStation);
+		return entityStation;
+	}
+	
+	@GetMapping("/v1/automaticSationsFull/recebe")
+	public ResponseEntity recebeDadosDoFront() {
+		
+		String entityStation = stationService.dadosApiDireto();
+		
+		return  ResponseEntity.ok().body(entityStation);
 	}
 	
 	@PostMapping

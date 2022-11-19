@@ -1,7 +1,0 @@
-package api.inmet.newton.dto;
-
-public class AlertaChuvasDto {
-	
-	AutomaticStationsDto stations;
-
-}

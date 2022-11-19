@@ -1,8 +1,0 @@
-package api.inmet.newton.repository;
-
-import org.springframework.stereotype.Repository;
-
-@Repository
-public class AutomaticStationsFullRepository extends JpaRepository<AutomaticStationsFullEntity, Long> {
-
-}

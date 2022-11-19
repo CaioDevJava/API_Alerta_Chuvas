@@ -2,10 +2,8 @@ package api.inmet.newton.mapper;
 
 import api.inmet.newton.dto.AutomaticStationsFullDto;
 import api.inmet.newton.models.AutomaticStationsFullEntity;
-import api.inmet.newton.service.AutomaticStationsFullService;
 
 
-//Classe Responsavél por transformar uma Entity em DTO e também fazer o Caminho inverso
 public class AutomaticStationsFullMapper {
 	
 
